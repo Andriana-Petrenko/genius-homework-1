@@ -70,11 +70,13 @@ li {
 a {
     color: currentcolor;
     text-decoration: none;
+    display: block;
 }
 
 button {
     cursor: pointer;
     border: none;
+    padding: 0;
 }
 
 img {
@@ -97,6 +99,7 @@ body {
     margin: 0;
     background-color: var(--primary-white);
     background-image: url('./images/hero_background.jpg');
+    background-size: contain;
     background-repeat: no-repeat;
 }
 
@@ -104,27 +107,83 @@ h2>span {
     color: var(--primary-accent);
 }
 
+.container {
+    max-width: 360px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 0 auto;
+}
+
+@media screen and (min-width:768px) {
+    .container {
+        max-width: 768px;
+        padding-left: 32px;
+        padding-right: 32px;
+
+    }
+}
+
+@media screen and (min-width:1280px) {
+    .container {
+        max-width: 1100px;
+        padding-left: 10px;
+        padding-right: 10px;
+
+    }
+}
+
+@media screen and (min-width:1440px) {
+    .container {
+        max-width: 1260px;
+    }
+}
+
 /* HEADER STYLES */
 
 header {
+    padding: 16px 0;
+}
+
+.container-header {
     display: flex;
     justify-content: space-between;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.25);
 }
 
-.nav-list {
-    display: flex;
-    gap: 56px;
-    align-items: center;
-}
-
+.nav-list,
 .address-list {
-    display: flex;
-    gap: 32px;
-    align-items: center;
-
+    display: none;
 }
+
+.menu-button {
+    display: block;
+    background-color: transparent;
+}
+
+@media screen and (min-width:768px) {
+    header {
+        padding: 32px 0;
+    }
+}
+
+@media screen and (min-width:1280px) {
+
+    header {
+        backdrop-filter: blur(10px);
+        background-color: rgba(255, 255, 255, 0.25);
+    }
+
+    .nav-list,
+    .address-list {
+        display: flex;
+        gap: 32px;
+        align-items: center;
+    }
+
+    .menu-button {
+        display: none;
+    }
+}
+
 
 /* MAIN STYLES */
 section h2 {
@@ -259,26 +318,27 @@ footer {
     background-color: var(--secondary-background);
 }
 
-.footer-container{
+.footer-container {
     display: flex;
     justify-content: space-between;
     padding: 56px 0;
 
 }
 
-.footer-nav-list, .footer-address-list {
+.footer-nav-list,
+.footer-address-list {
     display: flex;
     gap: 16px;
     flex-direction: column;
     color: var(--primary-white);
 }
 
-.footer-media-list{
+.footer-media-list {
     display: flex;
     gap: 24px;
-    fill:var(--primary-white);
+    fill: var(--primary-white);
 }
 
-.footer-media-list svg{
+.footer-media-list svg {
     fill: var(--primary-white);
 }
